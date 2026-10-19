@@ -1,0 +1,11 @@
+# Netlify deploy config.
+# The Lovable Vite config uses Nitro, which targets Cloudflare by default;
+# NITRO_PRESET switches the build output to Netlify Functions (.netlify/v1)
+# and writes static assets to `dist`.
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+[build.environment]
+  NITRO_PRESET = "netlify"
+  NODE_VERSION = "22"
